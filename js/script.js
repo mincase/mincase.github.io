@@ -1,5 +1,9 @@
 // declaraction of document.ready() function.
 (function () {
+    // ssl
+    if (window.location.hostname !== 'localhost' && window.location.protocol === 'http:')
+        window.location.href = window.location.href.replace('http:', 'https:');
+
     var ie = !!(window.attachEvent && !window.opera);
     var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && (RegExp.$1 < 525);
     var fn = [];
